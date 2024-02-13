@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Landing Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg mt-5 fixed-top ">
             <div class="container">
-                <a href="" class=" text-decoration-none text-dark">
+                <a href="{{ url('/dashboard') }}" class=" text-decoration-none text-dark">
                     <img src="{{ asset('red opened book.png') }}" alt="" height="50px" width="70px">
                     E-Perpus</a>
                 <div class="collapse navbar-collapse  d-flex justify-content-center" id="navbarSupportedContent">
@@ -27,7 +27,7 @@
                     </ul>
                 </div>
                 <div class="d-flex">
-                    <button class="btn btn-dark">Login</button>
+                    <a href="{{ url('login') }}" class="btn btn-dark  rounded-pill">Login -></a>
                 </div>
             </div>
         </nav>
@@ -39,9 +39,7 @@
                     <h3 class=" fw-semibold ">Dengan Mengggunakan E-Perpus</h3>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-dark rounded-pill">
-                        Mulai!
-                    </button>
+                    <a href="{{ url('login') }}" class="btn btn-dark  rounded-pill">Mulai !</a>
                 </div>
             </div>
         </div>
