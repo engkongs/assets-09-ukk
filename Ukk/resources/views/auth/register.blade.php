@@ -12,15 +12,15 @@
                             <h3 class=" fw-semibold ">Langsung Saja Daftar</h3>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('store') }}" method="POST">
+                            <form action="store" method="POST">
                                 @csrf
                                 <div class="mb-3">
                                     <input type="text"
-                                        class="form-control border rounded-pill p-3 @error('nama') is-invalid @enderror"
-                                        id="nama" placeholder="Nama Lengkap" name="nama"
-                                        value="{{ old('nama') }}">
-                                    @if ($errors->has('nama'))
-                                        <span class="text-danger">{{ $errors->first('nama') }}</span>
+                                        class="form-control border rounded-pill p-3 @error('name') is-invalid @enderror"
+                                        id="name" placeholder="Nama Lengkap" name="name"
+                                        value="{{ old('name') }}">
+                                    @if ($errors->has('name'))
+                                        <span class="text-danger">{{ $errors->first('name') }}</span>
                                     @endif
                                     <div class="mt-3  mb-3">
                                         <input type="email"
@@ -40,6 +40,15 @@
                                         @endif
                                     </div>
                                     <div class="mb-3">
+                                        <label for="password_confirmation"
+                                            class="col-md-4 col-form-label text-md-end text-start"></label>
+                                        <div class="col">
+                                            <input type="password" class="form-control border  rounded-pill p-3 "
+                                                id="password_confirmation" name="password_confirmation"
+                                                placeholder="Konifrmasi Password">
+                                        </div>
+                                    </div>
+                                    {{-- <div class="mb-3">
                                         <input type="text"
                                             class="form-control border rounded-pill p-3 @error('username') is-invalid  @enderror "
                                             id="username" name="username" value="{{ old('username') }}"
@@ -47,7 +56,7 @@
                                         @if ($errors->has('username'))
                                             <span class="text-danger">{{ $errors->first('username') }}</span>
                                         @endif
-                                    </div>
+                                    </div> --}}
                                     <div class="mb-3">
                                         <input type="number"
                                             class="form-control border rounded-pill p-3 @error('nomor_telepon') is-invalid @enderror  "
@@ -60,14 +69,12 @@
                                     <div class="mb-3">
                                         <textarea class="form-control border rounded-pill @error('alamat') is-invalid @enderror " id="alamat"
                                             placeholder="Alamat" name="alamat" value="{{ old('alamat') }}"></textarea>
+
                                     </div>
+
                                     <div class="mb-3">
-                                        <label for="password" class=""></label>
-                                    </div>
-                                    <div class="mb-3">
-                                        <a href="{{ url('login') }}"
-                                            class="btn btn-dark  d-flex justify-content-center rounded-pill p-3 ">Masuk
-                                            !</a>
+                                        <button type="submit"
+                                            class="btn btn-dark  d-flex justify-content-center rounded-pill p-3 ">Masuk!</button>
                                     </div>
                                 </div>
                             </form>

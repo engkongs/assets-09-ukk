@@ -9,27 +9,40 @@
                     <div class="">
                         <h1 class="d-flex justify-content-center fw-bold  ">Selamat Datang !</h1>
                         <div class="card-body">
-                            <div class="mb-3">
-                                <input type="text" class="form-control border rounded-pill p-3  "
-                                    id="exampleFormControlInput1" placeholder="Username">
-                            </div>
-                            <div class="mb-3">
-                                <input type="password" id="inputPassword6" class="form-control border  rounded-pill  p-3"
-                                    aria-describedby="passwordHelpInline" placeholder="Password">
-                            </div>
-                            <div class="justify-content-center mb-3">
-                                <div class="btn btn-dark d-flex justify-content-center rounded-pill p-3 ">Masuk !</div>
-                            </div>
-                            <div class="justify-content-center mb-3 ">
-                                <a href="{{ url('/') }}"
-                                    class="btn btn-dark d-flex justify-content-center rounded-pill p-3">Back Back</a>
-                            </div>
-                            <div class="text-center mt-5 text-lg mb-3">
-                                <a href="{{ url('register') }}"> Belum punya akun?
-                                </a>
-                                <p>Tunggu apa lagi langsung daftar saja</p>
+                            <form action="authenticate" method="post">
+                                @csrf
+                                <div class="mt-3  mb-3">
+                                    <input type="email"
+                                        class="form-control border rounded-pill p-3 @error('email') is-invalid  @enderror"
+                                        placeholder="Email" id="email" name="email" value="{{ old('email') }}">
+                                    @if ($errors->has('email'))
+                                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                                    @endif
+                                </div>
+                                <div class="mb-3">
+                                    <input type="password" id="password"
+                                        class="form-control border  rounded-pill  p-3 @error('password') is-invalid  @enderror"
+                                        aria-describedby="passwordHelpInline" name="password" placeholder="Password">
+                                    @if ($errors->has('password'))
+                                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                                    @endif
 
-                            </div>
+                                </div>
+                                <div class=" d-flex justify-content-center mb-3">
+                                    <button type="submit"
+                                        class="btn btn-dark d-flex justify-content-center rounded-pill p-3 ">Masuk !
+                                </div>
+
+                                <div class="justify-content-center mb-3 ">
+                                    <a href="{{ url('/') }}"
+                                        class="btn btn-dark d-flex justify-content-center rounded-pill p-3">Back Back</a>
+                                </div>
+                                <div class="text-center mt-5 text-lg mb-3">
+                                    <a href="{{ url('register') }}"> Belum punya akun?
+                                    </a>
+                                    <p>Tunggu apa lagi langsung daftar saja</p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

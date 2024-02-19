@@ -77,41 +77,71 @@
 
                         <ul class="menu">
                             <div class="mb-3">
-                                <a href="" class="submenu-link">Peminjaman</a>
-                            </div>
+                            </div> <a href="" class="submenu-link">Peminjaman</a>
                         </ul>
-                        <ul class="menu">
-                            <div class="mb-3">
-                                <a href="{{ url('/koleksi') }}" class="submenu-link">Koleksi</a>
-                            </div>
-                        </ul>
-                        <ul class="menu">
-                            <div class="mb-3">
-                                <a href="{{ url('/kategori') }}" class="submenu-link">Kategori</a>
-                            </div>
-                        </ul>
-
-
-
-
-
-
-
-
-
+                    </ul>
                 </div>
+
+                <ul class="menu">
+                    <div class="mb-3">
+                        <a href="{{ url('/koleksi') }}" class="submenu-link">Koleksi</a>
+                    </div>
+                </ul>
+                <ul class="menu">
+                    <div class="mb-3">
+                        <a href="{{ url('/kategori') }}" class="submenu-link">Kategori</a>
+                    </div>
+                </ul>
             </div>
-            <script src="{{ asset('dist/assets/static/js/components/dark.js') }}"></script>
-            <script src="{{ asset('dist/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="mt-3">Selamat Datang di Dashboard Peminjam</h3>
+        <div class="col">
+            <div class=" d-flex  justify-content-center mt-5 ">
+                <table class="table table-bordered ">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="{{ asset('dist/assets/static/js/components/dark.js') }}"></script>
+    <script src="{{ asset('dist/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
 
 
-            <script src="{{ asset('dist/assets/compiled/js/app.js') }}"></script>
+    <script src="{{ asset('dist/assets/compiled/js/app.js') }}"></script>
 
 
 
-            <!-- Need: Apexcharts -->
-            <script src="{{ asset('dist/assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
-            <script src="{{ asset('dist/assets/static/js/pages/dashboard.js') }}"></script>
+    <!-- Need: Apexcharts -->
+    <script src="{{ asset('dist/assets/extensions/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('dist/assets/static/js/pages/dashboard.js') }}"></script>
 
 </body>
 

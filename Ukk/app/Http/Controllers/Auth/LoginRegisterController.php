@@ -15,7 +15,7 @@ class LoginRegisterController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -30,39 +30,63 @@ class LoginRegisterController extends Controller
      * Store a newly created resource in storage.
      */
     public function register() {
-        return view('');
+        return view('auth.register');
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'nama'=>'required|string|max:250',
-            'email'=>'required|email|max:250',
+            'name'=>'required|string|max:250',
+            'email'=>'required|email|max:250|unique:users',
+            // 'username'=>'required|string|max:50|',
             'password'=>'required|min:8|confirmed',
-            'username'=>'required|string|max:50|unique:users',
-            'nomor_telepon'=>'required|number|max:13',
+            'nomor_telepon'=>'required|string|max:13',
             'alamat'=>'required|string|max:250',
 
         ]);
-
+        
         User::create([
-            'nama'=>$request->nama,
+            'name'=>$request->name,
             'email'=>$request->email,
             'password'=>Hash::make($request->password),
-            'username'=>$request->username,
+            // 'username'=>$request->username,
             'nomor_telepon'=>$request->nomor_telepon,
-            'alamat'=>$request->alamat,
+            'alamat'=>$request->alamat
         ]);
+        
 
-        $credentials  = $request->only('username', 'password');
+        $credentials  = $request->only('email', 'password');
         Auth::attempt($credentials);
         $request->session()->regenerate();
-        return redirect()->route('login')->withSuccess('Succes Login');
+        return redirect()->route('login')->withSuccess('Succes Register');
+        
+        
     }
 
     /**
      * Display the specified resource.
      */
+
+     public function login() {
+        return view('auth.login');
+    }
+
+    public function authenticate(Request $request) {
+        $credentials  = $request ->validate([
+            'email'=> 'required|email',
+            'password'=> 'required'
+        ]);
+
+        if(Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect('dashboard')->withSuccess('Succes Login');        
+        }
+
+        return back()->withErrors([
+            'email'=> 'Tidak Sesuai dengan email', 
+        ])->onlyInput('email');
+    }
+
     public function show(string $id)
     {
         //
