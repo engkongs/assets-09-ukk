@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,21 @@ Route::get('/register', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard.index');
+});
+
+Route::get('/kategori', function (){
+    return view('dashboard.kategori');
+});
+
+Route::get('/koleksi', function (){
+    return view('dashboard.koleksi');
+});
+
+Route::controller(LoginRegisterController::class)->group(function(){
+    Route::get('/register', 'register')->name('register');
+    Route::post('/store', 'store')->name('store');
+    Route::get('login', 'login')->name('login');
+    Route::post('/authenticate', 'authenticate')->name('authenticate');
+    
+    
 });
