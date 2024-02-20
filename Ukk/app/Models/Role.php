@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kategori extends Model
-{   
+class Role extends Model
+{
     use HasFactory;
 
-    protected $table ='kategori';
-    protected $fillable = [
-        'kategori',
-    ];
+    protected $guarded = ['id'];
+
+    public function users() {
+        return $this->hashMany(User::class, 'id');
+    }
 }

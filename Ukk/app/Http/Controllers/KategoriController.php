@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller
@@ -11,8 +12,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('kategori'[
-            
+        return view('_kategori', [
+            '_kategori'=> Kategori::latest()->paginate(5)
         ]);
     }
 
@@ -27,7 +28,7 @@ class KategoriController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Kategori $kategori)
     {
         //
     }
@@ -35,17 +36,21 @@ class KategoriController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Kategori $kategori)
     {
-        //
+        return view('_kategori.show', [
+            '_kategori' => $kategori
+        ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Kategori $kategori)
     {
-        //
+        return view('_kategori.edit', [
+            '_kategori' => $kategori
+        ]);
     }
 
     /**

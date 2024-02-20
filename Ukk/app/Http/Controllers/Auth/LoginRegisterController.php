@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -42,6 +43,7 @@ class LoginRegisterController extends Controller
             'password'=>'required|min:8|confirmed',
             'nomor_telepon'=>'required|string|max:13',
             'alamat'=>'required|string|max:250',
+            'role_id'=>'required|string',
 
         ]);
         
@@ -51,7 +53,9 @@ class LoginRegisterController extends Controller
             'password'=>Hash::make($request->password),
             // 'username'=>$request->username,
             'nomor_telepon'=>$request->nomor_telepon,
-            'alamat'=>$request->alamat
+            'alamat'=>$request->alamat,
+            'role_id'=>$request->role_id,
+            
         ]);
         
 
@@ -59,6 +63,7 @@ class LoginRegisterController extends Controller
         Auth::attempt($credentials);
         $request->session()->regenerate();
         return redirect()->route('login')->withSuccess('Succes Register');
+        
         
         
     }
@@ -79,6 +84,13 @@ class LoginRegisterController extends Controller
 
         if(Auth::attempt($credentials)) {
             $request->session()->regenerate();
+            if (auth()->user()->role_id === 1) {
+                return redirect()->intended('/dashboard');
+                } else {
+                    return redirect()->intended('/kategori');
+                    
+                }
+            
             return redirect('dashboard')->withSuccess('Succes Login');        
         }
 

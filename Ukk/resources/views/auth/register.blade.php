@@ -69,12 +69,25 @@
                                     <div class="mb-3">
                                         <textarea class="form-control border rounded-pill @error('alamat') is-invalid @enderror " id="alamat"
                                             placeholder="Alamat" name="alamat" value="{{ old('alamat') }}"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text"
+                                            class="form-control border rounded-pill p-3  @error('role_id') is-invalid @enderror "
+                                            id="role_id" placeholder="Roles" name="role_id" value="{{ old('role_id') }}">
+                                        @if ($errors->has('role_id'))
+                                            <span class="text-danger">{{ $errors->first('role_id') }}</span>
+                                        @endif
 
                                     </div>
 
-                                    <div class="mb-3">
+                                    <div class="mb-3 d-flex justify-content-center rounded-pill p-3 ">
                                         <button type="submit"
-                                            class="btn btn-dark  d-flex justify-content-center rounded-pill p-3 ">Masuk!</button>
+                                            class="btn btn-dark d-flex justify-content-center rounded-pill p-3  ">Masuk!</button>
+                                    </div>
+                                    <div class="justify-content-center mb-3 ">
+                                        <a href="{{ url('login') }}"
+                                            class="btn btn-dark d-flex justify-content-center rounded-pill p-3">Back
+                                            Back</a>
                                     </div>
                                 </div>
                             </form>

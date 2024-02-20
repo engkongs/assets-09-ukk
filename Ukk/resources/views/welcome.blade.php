@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page</title>
+    <title>E-Perpus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -13,7 +13,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg mt-5 fixed-top ">
             <div class="container">
-                <a href="{{ url('/dashboard') }}" class=" text-decoration-none text-dark">
+                <a href="{{ url('/') }}" class=" text-decoration-none text-dark">
                     <img src="{{ asset('red opened book.png') }}" alt="" height="50px" width="70px">
                     E-Perpus</a>
                 <div class="collapse navbar-collapse  d-flex justify-content-center" id="navbarSupportedContent">

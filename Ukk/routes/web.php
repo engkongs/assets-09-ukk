@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,16 +28,18 @@ Route::get('/register', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
-
-Route::get('/kategori', function (){
     return view('dashboard.kategori');
 });
 
 Route::get('/koleksi', function (){
     return view('dashboard.koleksi');
 });
+
+Route::get('/edit', function (){
+    return view('edit.edit-kategori');
+});
+
+Route::resource('_kategori', KategoriController::class);
 
 Route::controller(LoginRegisterController::class)->group(function(){
     Route::get('/register', 'register')->name('register');

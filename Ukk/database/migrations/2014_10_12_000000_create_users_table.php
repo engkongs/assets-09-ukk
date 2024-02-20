@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('nomor_telepon')->nullable();
             $table->string('alamat');
+            $table->unsignedBigInteger('role_id');
             $table->rememberToken();
             $table->timestamps();
         });
