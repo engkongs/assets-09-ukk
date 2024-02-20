@@ -31,15 +31,24 @@ Route::get('/dashboard', function () {
     return view('dashboard.kategori');
 });
 
+Route::get('/peminjaman', function () {
+    return view('peminjaman');
+});
+// Route::get('/kategori/{id}',[KategoriController::class, 'edit'] );
+
 Route::get('/koleksi', function (){
-    return view('dashboard.koleksi');
+    return view('koleksi');
 });
 
 Route::get('/edit', function (){
     return view('edit.edit-kategori');
 });
 
-Route::resource('_kategori', KategoriController::class);
+Route::get('/buku', function () {
+    return view('buku');
+});
+
+Route::resource('kategori', KategoriController::class);
 
 Route::controller(LoginRegisterController::class)->group(function(){
     Route::get('/register', 'register')->name('register');

@@ -1,7 +1,7 @@
 @extends('layouts.kumpulan')
 @section('contents')
     <div class="row justify-content-center mt-3">
-        <div class="col">
+        <div class="">
             <div class="card">
                 <div class="card-body">
                     <div class="mb-3">

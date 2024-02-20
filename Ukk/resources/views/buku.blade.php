@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard Koleksi - Mazer Admin Dashboard</title>
+        <title>Dashboard Buku - Mazer Admin Dashboard</title>
 
 
 
@@ -86,7 +86,7 @@
                             </ul>
                             <ul class="menu">
                                 <div class="mb-3">
-                                    <a href="{{ url('/buku') }}" class="submenu-link">Buku</a>
+                                    <a href="{{ url('/Buku') }}" class="submenu-link">Buku</a>
                                 </div>
                             </ul>
                             <ul class="menu">
@@ -107,14 +107,20 @@
         <div class="container">
             <div class="">
                 <div class="col">
-                    <h3 class="mt-3">Selamat Datang di Koleksi </h3>
-                    <button type="button" class="btn btn-primary mt-3 ">Tambah Koleksi</button>
+                    <h3 class="mt-3">Selamat Datang di Buku </h3>
+                    <button type="button" class="btn btn-primary mt-3 ">Tambah Buku</button>
                     <div class=" d-flex  justify-content-center mt-5 ">
                         <table class="table table-bordered ">
                             <thead>
                                 <tr>
                                     <th scope="col">Id</th>
-                                    <th scope="col">Koleksi</th>
+                                    <th scope="col">Judul</th>
+                                    <th scope="col">Penulis</th>
+                                    <th scope="col">Penerbit</th>
+                                    <th scope="col">Tahun Terbit</th>
+                                    <th scope="col">Deskripsi</th>
+                                    <th scope="col">Jumlah Pinjam</th>
+                                    <th scope="col">Stok</th>
                                     <th>Option</th>
 
                                 </tr>
@@ -122,7 +128,13 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td class="d-flex justify-content-center ">Action</td>
+                                    <th class=" ">Si Bobo</th>
+                                    <td class=" ">Fadli</td>
+                                    <td class="">Pasya</td>
+                                    <td class="">2013</td>
+                                    <td class="">Buku ini Bagus</td>
+                                    <td class="">2</td>
+                                    <td class="">1</td>
                                     <td>
                                         <div class="dropdown d-flex  justify-content-center ">
                                             <button class="btn btn-secondary dropdown-toggle" type="button"

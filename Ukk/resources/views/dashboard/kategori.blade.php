@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard - Mazer Admin Dashboard</title>
+        <title>Dashboard Kategori - Mazer Admin Dashboard</title>
 
 
 
@@ -77,7 +77,7 @@
 
                             <ul class="menu">
                                 <div class="mb-3">
-                                </div> <a href="" class="submenu-link">Peminjaman</a>
+                                </div> <a href="{{ url('peminjaman') }}" class="submenu-link">Peminjaman</a>
                             </ul>
                             <ul class="menu">
                                 <div class="mb-3">
@@ -86,7 +86,7 @@
                             </ul>
                             <ul class="menu">
                                 <div class="mb-3">
-                                    <a href="{{ url('/Buku') }}" class="submenu-link">Buku</a>
+                                    <a href="{{ url('/buku') }}" class="submenu-link">Buku</a>
                                 </div>
                             </ul>
                             <ul class="menu">
@@ -107,7 +107,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h3 class="mt-3">Selamat Datang di Dashboard Peminjam</h3>
+                    <h3 class="mt-3">Selamat Datang di Dashboard </h3>
                     <div class=" d-flex  justify-content-center mt-5 ">
                         <table class="table table-bordered ">
                             <thead>
@@ -120,8 +120,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
+                                    <th scope="row">1</th>
+                                    <td class="d-flex justify-content-center ">Action</td>
                                     <td>
                                         <div class="dropdown d-flex  justify-content-center ">
                                             <button class="btn btn-secondary dropdown-toggle" type="button"
@@ -129,8 +129,7 @@
                                                 Options
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item"
-                                                        href="{{ 'edit.edit-kategori' }} }}">Edit</a>
+                                                <li><a class="dropdown-item" href="{{ '' }}">Edit</a>
                                                 </li>
                                                 <li><a class="dropdown-item" href="#">Delete</a></li>
                                                 <li><a class="dropdown-item" href="#"></a></li>

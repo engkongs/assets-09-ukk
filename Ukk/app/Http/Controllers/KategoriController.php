@@ -38,18 +38,22 @@ class KategoriController extends Controller
      */
     public function show(Kategori $kategori)
     {
-        return view('_kategori.show', [
-            '_kategori' => $kategori
+        return view('kategori.show', [
+            'kategori' => $kategori
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Kategori $kategori)
+    public function edit(string $id)
     {
-        return view('_kategori.edit', [
-            '_kategori' => $kategori
+        
+        $kategori = Kategori::where('id', $id)->first();
+        return view('edit.edit-kategori', [
+            'kategori' => $kategori,
+            'title' => 'kategori',
+            'active' => 'kategori',
         ]);
     }
 

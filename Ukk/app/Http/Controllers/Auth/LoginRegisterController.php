@@ -87,7 +87,7 @@ class LoginRegisterController extends Controller
             if (auth()->user()->role_id === 1) {
                 return redirect()->intended('/dashboard');
                 } else {
-                    return redirect()->intended('/kategori');
+                    return redirect()->intended('/dashboard');
                     
                 }
             
