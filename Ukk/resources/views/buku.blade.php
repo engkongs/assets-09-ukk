@@ -86,7 +86,7 @@
                             </ul>
                             <ul class="menu">
                                 <div class="mb-3">
-                                    <a href="{{ url('/Buku') }}" class="submenu-link">Buku</a>
+                                    <a href="{{ url('/buku') }}" class="submenu-link">Buku</a>
                                 </div>
                             </ul>
                             <ul class="menu">

@@ -108,7 +108,6 @@
             <div class="">
                 <div class="col">
                     <h3 class="mt-3">Selamat Datang di Peminjaman </h3>
-                    <button type="button" class="btn btn-primary mt-3 ">Tambah Buku</button>
                     <div class=" d-flex  justify-content-center mt-5 ">
                         <table class="table table-bordered border-dark-subtle  ">
                             <thead>
